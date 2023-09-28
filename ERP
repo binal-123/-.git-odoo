@@ -1,0 +1,31 @@
+ERP
+structure of odoo 
+modulues
+model
+database
+
+
+Q) What is ERP?
+An ERP software system is a set of integrated applications or modules for managing a company's core business processes – including finance and accounting, supply chain, HR, procurement, sales, inventory management, and more.
+
+
+Q)What is Odoo?
+Odoo is a large collection of modules like CRM, Sales management, E-commerce, Warehouse management, Purchase management, Accounting suit, Manufacturing management, HRMS etc.
+Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.
+
+
+Q) What is Module?
+Collection of models is known as module.
+Module cointains views files 
+In Odoo.sh you can find custom modules under the folder src/user, it will contain all the code from your Github repository.
+
+
+q) what is Model?
+Collection of columns is known as Model.
+In Odoo, A model is a class that corresponds to a data relationship (table). It includes all of the necessary fields and behaviors for the data you'll be storing. In the vast majority of cases, each model is associated with a single database table.
+
+
+
+	
+Q)What is database structure?
+ adding fields, models, views, reports and so on will not create physical files on the system. Those changes are all stored in the database and can only be found in the database. When you code your own modules however you will see files showing up. In Odoo.sh you can find custom modules under the folder src/user, it will contain all the code from your Github repository.
