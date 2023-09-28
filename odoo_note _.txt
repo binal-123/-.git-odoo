@@ -1,0 +1,198 @@
+﻿*Python Data Types:
+
+  Numeric data types:int, float,  complex.
+
+  String data types: str.
+
+  Sequence types: list, tuple, range.
+
+  Binary types: bytes, bytearray, memoryview.
+   
+  Mapping data type: dict.
+
+  Boolean type: bool.
+
+  Set data types: set
+ 
+-Python Casting 
+
+-Python For Loops
+
+-Python If ... Else
+
+-While Loops
+
+-Python Functions
+
+-One Line Loop with If and else 
+
+--------------------------------------------------------------------------------
+
+1)odoo
+-Odoo, an open-source ERP software framework is used by small, medium and large enterprises
+-odoo is a python fra
+
+--------------------------------------------------------------------------------
+
+2)What is Odoo ERP? 
+->Odoo ERP system is enterprise resource planning software used company-wide for the management of business processes.  Odoo provides seamlessly integrated functional business apps called Odoo apps that form an ERP solution when combined. Open-source software, Odoo, is available with SaaS subscription pricing as the Enterprise edition or as the Odoo free Community version.
+( ERP atle aapre j pc ma work kariye a)
+
+-Manufacturing , sales , purchase , Accounting , Marketing , etc.
+
+comman = service , product , Manufacturing ,  dropship..
+
+--------------------------------------------------------------------------------
+
+3)
+
+ 1)odoo Default : In Odoo, sometimes we have to set a specific value for a field
+ by default every time we create a record of that model. To achieve this task we
+ have two key options/methods.
+
+    1. Passing value through kwargs(**kwargs is a variable number of keyworded  
+    arguments that can be passed to a function that can perform dictionary  
+    operations.)
+    2. Setting value with default_get function( This function is used to set the  
+    values for multiple fields.)
+
+
+2)configuration : The implementation of an ERP is a critical process. Whenever we implement an ERP we have to configure our functions and features. Here, configuration means enabling the features of the ERP in such a way that it will help the operations of your business.
+
+3)OCA : Odoo Community Association (OCA) : The OCA allows you, as a member or contributor, to work independently in a community of peers who see you, support you and learn from you. We allow organizations to show their support for the Odoo open source community.
+    **repo-github** = The GitHub repos for all Open Source work around Odoo - Odoo Community Association.
+  
+--------------------------------------------------------------------------------
+ 
+ 1)module : Odoo module is a set of business logic which helps to enhance the 
+ existing functionality or add some new functionality in Odoo. All Odoo models  
+ are created by inheriting from this class
+  
+   1)models(.py file hoi): In Odoo, A model is a class that corresponds to a  
+   data relationship (table).
+         
+        1) Abstract model
+        2) Transient model
+        3) Models.
+
+   2)views(xml file hoi):In Odoo, views define the way by which the  
+   models/objects displayed to the user-end. Views is of several types, each 
+   view represents a mode of visualization. They make the modules more 
+   user-friendly and can vary according to the need.
+
+   3)data:
+
+   4)security:
+
+   5)__manifest__.py:
+
+   6)__init__.py:
+
+   7)static:
+
+--------------------------------------------------------------------------------
+   
+  1)fields(creation)
+  2)class(odoo)
+  3)model(information)
+  4)view(structure of model)
+
+--------------------------------------------------------------------------------
+
+MODULE :
+        1)xml:
+        ~button
+        ~action
+        ~menu
+        ~views 
+        ~xpath
+ 
+        2)py:
+        ~methods
+        ~class
+        ~fields(One2many,Many2many,Many2one,Char,Selection,Integer,Float,Boolean)
+
+    
+--------------------------------------------------------------------------------
+
+
+practical:
+
+  1)how to create module
+  2)how to define models
+  3)how to create menu
+  4)how to create window action
+  5)how to link menu and actions
+  6)how to set access rights for model
+  7)how to create form view
+  8)how to create tree view
+  9)what is on change
+  10)what is compute 
+  11)attrs : readonly, invisible, required
+  12)inheritance
+  13)what is domain
+  14) What is a button in odoo?
+  15)Button type: object, action, and smart
+  16)How to add a new action to the action button.
+  17)what is related field
+  18)what is search method.
+  19)super call function.
+
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.delivery_carrier,access_delivery_carrier,test_shipping_integration.model_delivery_carrier,,1,1,1,1
+access.package_details,access_package_details,test_shipping_integration.model_package_details,,1,1,1,1
+access.res_company,access_res_company,test_shipping_integration.model_res_company,,1,1,1,1
+access.sale_order,access_sale_order,test_shipping_integration.model_sale_order,,1,1,1,1
+access.stock_picking,access_stock_picking,test_shipping_integration.model_stock_picking,,1,1,1,1
+
+
+-----------------------------------------------
+
+Task 1:  Create one module(custom_shipping_rate), and odoo version is v16. Ned to set dependency as a delivery module in manifest file. 
+
+Create one model(custom.shipping.rules) and following fields we need to take in this model
+- city(Char)
+- zip(Char)
+- country_id(Many2one) Required (relation with res.country)
+- state_id(Many2one) Required (relation with res.country.state)
+- rate(Float)  Required  default=0 
+- carrier_id(many2one) with delivery.carrier model
+
+Inherit delivery carrier model and add follwoing fields
+- custom_rule_ids(one2many), This fields relation with custom.shipping.rules model and also relation with carrier_id
+- Need to inherit delivery carrier view and show custom_rule_ids field in this different page (find delivery carrier view using this menu Sales-->configuration-->Shipping methods)
+      
+
+--------------------------------------------------------------------------------
+
+
+  20)what are search_count, browse, ref, create, write, copy, and unlink methods?
+  21)how to override a super call method.
+  22)raising exception : 1. ValidationError, 2. UserError, 3. AccessError, 4. MissingError, 5. AccessDenied, 6. IndirectWarning, 7. CacheMiss
+                           
+  
+
+--------------------------------------------------------------------------------
+
+
+Task 2:
+
+ - Partner Create thay Ne Check karavanu Country set 6e ke nai na hoy ne to United state set karava nu Partner Means Customers
+
+ - Partner Ma Email Change karu ne and save karu tyare Warning msg avo joi ae
+  you can't change email
+  For Warning use Validationerror
+
+
+--------------------------------------------------------------------------------
+
+23) how to create a wizard
+24)cron job
+25)mapped & filteredd
+26)getattr, hasattr, setattr
+27)context & wth_context
+28)self._context
+
+
+
+
