@@ -1,0 +1,203 @@
+View:-
+
+(1)List or Tree View
+
+==>This view helps to show multiple records in a single view. It showed like in a Tree, or list-like structure, which includes a set of rows and columns. Each row represents a record of the database table.
+
+(2)Form View
+
+==>Form View is used to display single record. It gives the data inside that single record.The view is created inside a <form> tag. which includes both structural and semantic components.
+
+(3)Pivot View
+ 
+==>Pivot View helps the user to analyze the operations like reports. It can be used to filter the reports in different aspects and assist in downloading them as xlsx report.
+
+(4)Graph View
+ 
+==>Graph view provides a graphical view of the data, which is an aggregation of data that looks like a pie, bar, or chart. It is easy access for the users to get better data manipulation and analysis. 
+
+(5)Kanban View 
+
+==>In kanban view, it shows records as cards. Here, records can be grouped in columns to display each one.
+
+(6)Search View 
+
+==>Search views are used to filter the contents or records based on our needs. This helps to read the records with easy access.
+
+(7)Activity View 
+
+==>Activity view helps the user to manage and schedule activities within the records. It helps to make things more systematic.
+
+(8)Calendar View 
+
+==>The calendar view plays a vital role in each and every organization. This makes to do things systematically and make the employees up-to-date.
+
+=============================================================================================================================================
+*Types of Field:-
+
+(1) Simple Types:=
+
+==> Simple Type are Integer,Char,String,Boolean etc.
+
+(2) Relation Types:=
+
+==> Relation Type represent relation between objects like Many2one,One2Many, & Many2Many.
+
+(3) Functional types
+
+==> Functional Fields are not stored in the database.
+
+=============================================================================================================================================
+*Button:-
+
+(1) Action type Button:-
+
+
+==> Action is used if want to call any action which is written in .Xml file.
+
+(2) Object type Button
+
+==> Object is used if you want to call a method which is written in .py file.
+
+=============================================================================================================================================
+*Menus
+
+==> Odoo has a flexible way to define menu, sub-menu, and actions. The main attraction is that one can create a menu and sub menu from code as well as UI, which makes Odoo more user-friendly.
+
+==> A user can directly create a menu and sub-menu from the UI. In this blog, we are going to discuss how to create a menu, sub-menu, and action from code as well as how to set it from UI.
+
+==> We start by creating a menu from XML. ie, from code
+
+*Menu - Name of the menu
+
+==>Parent Menu - Parent menu if any
+
+==>Sequence - sequence in which the menu has to appear.
+
+==>Action - we have to choose ir.action.act_window so that another field appears in which we can choose the respective action that has to be called on clicking the menu. In this example, I will give the action only for the sub-menu.
+
+==>Access Rights - If we need to give access only to a particular user group, we can add access rights.
+
+==>Submenus- If we need to add a sub-menu for the menu, we can add it here,
+
+=============================================================================================================================================
+*API (Application Programming Interface)
+
+API:-
+====
+
+==> An API which stands for application programming interface performs as a connection between computers or between computer programs. Odoo is an open ERP software written in python. API methods like Get, post, put, delete, etc can also be implemented in Odoo. We can create records in Odoo by retrieving data through the API GET method. Also, we can send data through the API POST method simultaneously with record creation.
+
+1. Get Method
+=================
+
+To get data from an API.
+
+E.g.:
+
+data = {}
+url = "http://example.com"
+response = requests.get(url, data=json.dumps(data))
+
+E.g.:-
+
+import json
+import requests
+class ModuleName(models.Model):
+_name = 'module.name'
+_description = 'Module Description’'
+name =  fields.Char(string=”Name”)
+age =  fields.Char(string=”Age”)
+def get_data(self):
+    
+data = {}
+    
+url = “http://example.com”
+    
+response = requests.get(url, data=json.dumps(data))
+        
+res = response.json()
+        
+values = {
+            
+"name": res.get('Name'),
+            
+"age": res.get('Age')
+        
+}
+    
+super(ModuleName, self).sudo().create(values)
+
+2. Post Method
+=========================
+
+To send data to an API
+
+E.g.: Let's look at how to send data to an API when creating a record/data in Odoo, from Odoo import fields, models, API
+=========================================================================================================================
+
+import json
+import requests
+class ModuleName(models.Model):
+_name = 'module.name'
+_description = 'Module Description’'
+name =  fields.Char(string=”Name”)
+age =  fields.Char(string=”Age”)
+@api.model
+def create(self, vals):
+data = {
+“Name” : vals.get(‘name’),
+“Age” : vals.get(‘age’’),
+}
+url = ""http://example.com"
+response = requests.post(url, data=json.dumps(data))
+return super(ModuleName, self).create(vals)
+
+3. Put Method
+============================
+
+To Update/Edit existing data.
+
+E.g.: Let's look at how to update data when editing a record/data in Odoo, Assume  “link” as the URL of the record we want to update. Then,
+===========================================================================================================================================
+
+def write(self, vals):
+    
+record  = super(moduleName, self).write(vals)
+    
+data = {
+        
+"Name": self.name,
+        
+"Age": self.age,
+        
+    
+}
+    
+response = requests.put(link, data=json.dumps(data))
+    
+return record
+
+4. Delete Method
+===================
+
+To remove/Delete data.
+
+E.g.: Let’s take “url” as the URL of the record we want to delete. Then,
+==========================================================================
+
+Payload = {}
+headers = {}
+response = requests.request("DELETE", url, headers=headers, data=payload)
+
+=============================================================================================================================================
+
+* Credential:-
+
+==> You can use these credentials to authenticate the following nodes with Odoo: Odoo. Sign up for Odoo and create an API key or password. 
+
+
+
+
+
+
