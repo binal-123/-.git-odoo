@@ -14,7 +14,7 @@ View:-
 
 (4)Graph View
  
-==>Graph view provides a graphical view of the data, which is an aggregation of data that looks like a pie, bar, or chart. It is easy access for the users to get better data manipulation and analysis. 
+==>Graph view provides a graphical view of the data, which is an aggregation of data that looks like a pie, line, bar, or chart. It is easy access for the users to get better data manipulation and analysis. 
 
 (5)Kanban View 
 
@@ -32,6 +32,13 @@ View:-
 
 ==>The calendar view plays a vital role in each and every organization. This makes to do things systematically and make the employees up-to-date.
 
+(9)View Inheritance
+
+==>If we wanna change the existing view we have to inherit the corresponding view and then do your changes.It is possible to inherit all views like tree,form,kanban,etc.For inheriting a view we have to create an XML file inside views folder for adding the inheritance and also add this path inside the menifest ->data.
+
+(10)Dashboard View
+
+==>Dashboard view is used to show multiple views and various KPI's in a single screen. We should specify ‘web_dashboard’ in the dependency in manifest. 
 =============================================================================================================================================
 *Types of Field:-
 
@@ -43,15 +50,22 @@ View:-
 
 ==> Relation Type represent relation between objects like Many2one,One2Many, & Many2Many.
 
+==>ex:-There are 3 types: One2many – each class has teacher; Many2one – each class has list of students but student can't be in more than one class. And two sided relation: Many2many.
+
+
 (3) Functional types
 
 ==> Functional Fields are not stored in the database.
 
+
 =============================================================================================================================================
 *Button:-
+        Main uses of button to redirect on another page after a click on button.
+	To submit the data on database after a click on button.
+	We have to use button tag <button>.
+	Button's are of many types but we'll disscuss the two are below:
 
 (1) Action type Button:-
-
 
 ==> Action is used if want to call any action which is written in .Xml file.
 
@@ -62,13 +76,15 @@ View:-
 =============================================================================================================================================
 *Menus
 
-==> Odoo has a flexible way to define menu, sub-menu, and actions. The main attraction is that one can create a menu and sub menu from code as well as UI, which makes Odoo more user-friendly.
+==> Odoo has a flexible way to define menu, sub-menu, and actions. The main attraction is that one can create a menu and sub menu from code as well as UI, which makes Odoo more user-friendly. 
 
 ==> A user can directly create a menu and sub-menu from the UI. In this blog, we are going to discuss how to create a menu, sub-menu, and action from code as well as how to set it from UI.
 
 ==> We start by creating a menu from XML. ie, from code
 
-*Menu - Name of the menu
+*Menu 
+
+==>Menu - Name of the menu
 
 ==>Parent Menu - Parent menu if any
 
@@ -76,9 +92,22 @@ View:-
 
 ==>Action - we have to choose ir.action.act_window so that another field appears in which we can choose the respective action that has to be called on clicking the menu. In this example, I will give the action only for the sub-menu.
 
-==>Access Rights - If we need to give access only to a particular user group, we can add access rights.
+==>Types of actions are here :-
+1) Server Actions (ir.actions.server)
 
-==>Submenus- If we need to add a sub-menu for the menu, we can add it here,
+2) Window Actions (ir.actions.act_window)
+
+3) URL Actions (ir.actions.act_url)
+
+4) Client Actions (ir.actions.client)
+
+5) Report Actions (ir.actions.report)
+
+6) Automated Actions (ir.cron)
+
+==>Access Rights - If we need to give access only to a particular user group, we can add access rights. There are four access rights: read, write, create and delete.
+
+==>Submenus- If we need to add a sub-menu for the menu, we can add it here.A submenu or cascading menu is a secondary menu displayed on demand from within a menu.
 
 =============================================================================================================================================
 *API (Application Programming Interface)
