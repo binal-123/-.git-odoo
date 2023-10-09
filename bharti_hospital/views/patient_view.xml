@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_hospital_management" model="ir.actions.act_window">
+            <field name="name">Bharti Hospital Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.patient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Patient Record
+                </p>
+                </field>
+
+        </record>
+
+
+
+
+        <menuitem id="hospital_menu"
+                  name="Bharti Hospital Management"
+                  action="action_hospital_management"
+        />
+    <?data>
+</odoo>
+
+
