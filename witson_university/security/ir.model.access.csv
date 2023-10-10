@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+university_menu,witson.student,model_witson_student,,1,1,1,1
+university_menu,student.detail,model_student_detail,,1,1,1,1

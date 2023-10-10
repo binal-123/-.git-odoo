@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+ <!--main view starts-->
+
+        <record id="action_witson_university" model="ir.actions.act_window">
+            <field name="name">Witson University</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">witson.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Witson's Records...!
+                </p>
+            </field>
+        </record>
+
+ <!--main view ends-->
+
+<!--main tree view starts-->
+
+        <record id="action_witson_university_tree" model="ir.ui.view">
+            <field name="name">witson.student.tree</field>
+            <field name="model">witson.student</field>
+            <field name="arch" type="xml">
+                <tree string="Witson Student">
+                    <field name="name"/>
+                    <field name="std"/>
+                    <field name="div"/>
+                </tree>
+            </field>
+        </record>
+
+<!--main tree view ends-->
+
+<!--main form view starts-->
+
+         <record id="action_witson_university_form" model="ir.ui.view">
+            <field name="name">witson.student.form</field>
+            <field name="model">witson.student</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="std"/>
+                            <field name="div"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--main form view ends-->
+
+
+<!--sub menu view starts -->
+
+        <record id="action_student_detail" model="ir.actions.act_window">
+            <field name="name">Student Detail</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.detail</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Fill student details here...!
+                </p>
+            </field>
+        </record>
+
+ <!--sub menu view ends -->
+
+<!--sub tree view starts-->
+
+        <record id="action_student_detail_tree" model="ir.ui.view">
+            <field name="name">student.detail.tree</field>
+            <field name="model">student.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Witson Student">
+                    <field name="name"/>
+                    <field name="add"/>
+                    <field name="mobile"/>
+                    <field name="group"/>
+                </tree>
+            </field>
+        </record>
+
+<!--sub tree view starts-->
+
+<!--sub form view starts-->
+
+        <record id="action_student_detail_form" model="ir.ui.view">
+            <field name="name">student.detail.form</field>
+            <field name="model">student.detail</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="add"/>
+                            <field name="mobile"/>
+                            <field name="group"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--sub form view ends-->
+
+
+
+<!--main menu item satrts-->
+
+        <menuitem id="university_menu"
+                  name="Witson University"
+                  action="action_witson_university"
+        />
+<!--main menu item ends-->
+
+<!--sub menu item starts -->
+
+        <menuitem id="university_sub_class"
+                  name="Class"
+                  action="action_witson_university"
+                  parent="university_menu"
+        />
+
+<!--sub menu item ends -->
+
+<!--dropdown menu starts -->
+
+        <menuitem id="university_class"
+                  name="Details"
+                  action="action_student_detail"
+                  parent="university_sub_class"
+        />
+
+<!--dropdown menu ends -->
+
+
+    </data>
+</odoo>
